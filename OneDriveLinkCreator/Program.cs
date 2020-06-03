@@ -11,6 +11,7 @@ namespace OneDriveLinkCreator
         public static Options options = new Options();
         static void Main(string[] args)
         {
+            Console.WriteLine("---");
             if (CommandLine.Parser.Default.ParseArgumentsStrict(args, options))
             {
                 var OneDriveApi = new OneDriveGraphApiExtension(options.api_key);
