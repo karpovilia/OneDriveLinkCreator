@@ -18,25 +18,25 @@ namespace OneDriveLinkCreator
                 OneDriveApi.ProxyConfiguration = null;
                 OneDriveApi.AuthenticateUsingRefreshToken(options.token).Wait();
 
-                var folder_json = OneDriveApi.GetData<OneDriveItemCollection>(string.Concat("drive/root:", options.path, ":/?expand=children")).Result.OriginalJson;
-                dynamic folder_data = JObject.Parse(folder_json);
+                var folderJson = OneDriveApi.GetData<OneDriveItemCollection>(string.Concat("drive/root:", options.path, ":/?expand=children")).Result.OriginalJson;
+                dynamic folderData = JObject.Parse(folderJson);
                 System.Collections.Generic.List<String> links = new System.Collections.Generic.List<string>();
-                foreach (var obj in folder_data.children)
+                foreach (var obj in folderData.children)
                 {
                     try
                     {
-                        var share_json = OneDriveApi.ShareItemModified(obj.id.ToString(), OneDriveLinkType.View, OneDriveSharingScope.Anonymous).Result.OriginalJson;
-                        dynamic share_data = JObject.Parse(share_json);
+                        var shareJson = OneDriveApi.ShareItemModified(obj.id.ToString(), OneDriveLinkType.View, OneDriveSharingScope.Anonymous).Result.OriginalJson;
+                        dynamic share_data = JObject.Parse(shareJson);
                         string sharingUrl = share_data.link.webUrl;
-                        string file_name = obj.name;
+                        string fileName = obj.name;
 
                         string base64Value = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(sharingUrl));
                         string encodedUrl = "u!" + base64Value.TrimEnd('=').Replace('/', '_').Replace('+', '-');
 
                         string resultUrl = string.Format("https://api.onedrive.com/v1.0/shares/{0}/root/content", encodedUrl);
 
-                        links.Add(string.Concat("[", file_name, "](", resultUrl, ")"));
-                    }
+                        links.Add(string.Concat("[", fileName, "](", resultUrl, ")"));
+                    fileName
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
