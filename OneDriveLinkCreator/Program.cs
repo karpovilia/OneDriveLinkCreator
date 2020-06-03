@@ -36,7 +36,7 @@ namespace OneDriveLinkCreator
                         string resultUrl = string.Format("https://api.onedrive.com/v1.0/shares/{0}/root/content", encodedUrl);
 
                         links.Add(string.Concat("[", fileName, "](", resultUrl, ")"));
-                    fileName
+                    }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
