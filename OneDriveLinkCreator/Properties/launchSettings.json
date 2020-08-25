@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OneDriveLinkCreator": {
+      "commandName": "Project",
+      "commandLineArgs": "--api d12925dd-22fc-41d0-9c4a-a1933940c1c8 --token MCQ00uRFZHWigGz13YRrDoUjP6QaZzGLW*24Ih6CCDA8HgtLlB6fgW5bJZjWU6j6GANuMiwr9Rp*G80oWcVaHJOi574de5NNrHqOSzTyDPr8yPQEY72Hoo2a*qRmbKdXnR94tMJS8X8wUM8V3eoGJSU0Hg4Dh7XJo53VoYfKhLxLO9BCFNeD*YVRQvW941TRC38dX4DAxRnFR4s6YiVxJ6SL3Oo16asX*p04alhTUpMCU1B1g353QbQPj1t0gZYaGGd5zRgb0ecFdbDwe1QqI9I1bL!bCRnlF73b14HEmBhgRvaEkB8KDN4H4!tmnETzoUd!XA6eHvdUPs6onFgAg5DjC9*otmH2vXtmvOX7yZWj*isNaqFUwRZFjFEl7M0X!E0qe3D!u1tjGDQT4DDBgsys$ --path /FTS/Деплой 07.07.2020"
+    }
+  }
+}
